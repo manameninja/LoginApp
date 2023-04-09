@@ -18,8 +18,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var labelSignup: UILabel!
     
     // MARK: - IBActions
-    @IBOutlet weak var buttonLoginAction: UIButton!
-    @IBOutlet weak var buttonSignupAction: UIButton!
+    @IBAction func buttonLoginAction(_ sender: UIButton) {
+    }
+    @IBAction func buttonSignupAction(_ sender: UIButton) {
+    }
     
     // MARK: - Life Cylce
     override func viewDidLoad() {

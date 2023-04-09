@@ -139,6 +139,9 @@
                                                 <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="buttonLoginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hB5-Ua-y3w"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -158,6 +161,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Signup here">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="buttonSignupAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R4Y-5a-O05"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -185,9 +191,7 @@
                     <navigationItem key="navigationItem" id="Nqy-ks-F4g"/>
                     <connections>
                         <outlet property="buttonLogin" destination="51X-Ah-8Em" id="CJW-P4-4nf"/>
-                        <outlet property="buttonLoginAction" destination="51X-Ah-8Em" id="X1b-ew-aPy"/>
                         <outlet property="buttonSignup" destination="mSV-4o-C75" id="JLd-ex-KpO"/>
-                        <outlet property="buttonSignupAction" destination="mSV-4o-C75" id="7rl-Cn-Evo"/>
                         <outlet property="labelSignup" destination="Chg-XK-0bw" id="fcR-Tw-hcE"/>
                         <outlet property="textFieldEmail" destination="Mjq-Ca-UiM" id="OsI-Lg-WrZ"/>
                         <outlet property="textFieldPassword" destination="GqD-xu-cbD" id="dbI-ww-ubw"/>
@@ -202,7 +206,6 @@
         <!--Second View Controller-->
         <scene sceneID="59q-kf-WFT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e2T-QM-baL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="2sx-yy-GfH" customClass="SecondViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wCL-rX-th0">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -212,6 +215,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Qbl-hO-JPF"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e2T-QM-baL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="886" y="13"/>
         </scene>
