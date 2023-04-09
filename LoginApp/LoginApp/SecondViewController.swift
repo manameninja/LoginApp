@@ -8,5 +8,5 @@
 import UIKit
 
 final class SecondViewController: UIViewController {
-    // MARK: - Life Cylce
+
 }

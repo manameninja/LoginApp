@@ -134,6 +134,11 @@
                                         <buttonConfiguration key="configuration" style="plain" title="LOGIN">
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
                                         </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -178,6 +183,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Nqy-ks-F4g"/>
+                    <connections>
+                        <outlet property="buttonLogin" destination="51X-Ah-8Em" id="CJW-P4-4nf"/>
+                        <outlet property="buttonLoginAction" destination="51X-Ah-8Em" id="X1b-ew-aPy"/>
+                        <outlet property="buttonSignup" destination="mSV-4o-C75" id="JLd-ex-KpO"/>
+                        <outlet property="buttonSignupAction" destination="mSV-4o-C75" id="7rl-Cn-Evo"/>
+                        <outlet property="labelSignup" destination="Chg-XK-0bw" id="fcR-Tw-hcE"/>
+                        <outlet property="textFieldEmail" destination="Mjq-Ca-UiM" id="OsI-Lg-WrZ"/>
+                        <outlet property="textFieldPassword" destination="GqD-xu-cbD" id="dbI-ww-ubw"/>
+                        <outlet property="viewEmail" destination="DPI-bW-AMS" id="SmI-yT-2g1"/>
+                        <outlet property="viewPassword" destination="7qe-bD-eBF" id="ZEL-LA-zNC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
