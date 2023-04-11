@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  LoginApp
+
+  Created by Даниил Павленко on 10.04.2023.
+  
+*/
+
+"Ups.." = "Упс..";
+"Wrong e-mail or paassword" = "Неверный e-mail или пароль";
+"OK" = "Окей";

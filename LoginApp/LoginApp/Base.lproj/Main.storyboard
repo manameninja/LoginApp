@@ -125,7 +125,7 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51X-Ah-8Em">
                                         <rect key="frame" x="0.0" y="375" width="300" height="37.666666666666686"/>
-                                        <color key="backgroundColor" red="0.1725490093" green="0.15294116739999999" blue="0.13725490870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.17254901960784313" green="0.15294117647058825" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="51X-Ah-8Em" secondAttribute="height" multiplier="8:1" id="IQU-J1-j1q"/>
                                         </constraints>
@@ -192,11 +192,14 @@
                     <connections>
                         <outlet property="buttonLogin" destination="51X-Ah-8Em" id="CJW-P4-4nf"/>
                         <outlet property="buttonSignup" destination="mSV-4o-C75" id="JLd-ex-KpO"/>
+                        <outlet property="envelopImageView" destination="mMS-Ux-oYo" id="0qJ-fR-q68"/>
                         <outlet property="labelSignup" destination="Chg-XK-0bw" id="fcR-Tw-hcE"/>
+                        <outlet property="lockImageView" destination="Eis-pr-S3g" id="osG-Bs-ZX0"/>
                         <outlet property="textFieldEmail" destination="Mjq-Ca-UiM" id="OsI-Lg-WrZ"/>
                         <outlet property="textFieldPassword" destination="GqD-xu-cbD" id="dbI-ww-ubw"/>
                         <outlet property="viewEmail" destination="DPI-bW-AMS" id="SmI-yT-2g1"/>
                         <outlet property="viewPassword" destination="7qe-bD-eBF" id="ZEL-LA-zNC"/>
+                        <segue destination="2sx-yy-GfH" kind="show" identifier="goToHomePage" id="xlo-CL-wCn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
