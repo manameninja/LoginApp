@@ -163,6 +163,7 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="buttonSignupAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R4Y-5a-O05"/>
+                                            <segue destination="n6b-sF-xwe" kind="show" id="03S-xI-LZr"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -206,6 +207,60 @@
             </objects>
             <point key="canvasLocation" x="116.79389312977099" y="3.5211267605633805"/>
         </scene>
+        <!--Register View Controller-->
+        <scene sceneID="reF-yE-nfz">
+            <objects>
+                <viewController id="n6b-sF-xwe" customClass="RegisterViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cJg-Sj-KCS">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lKX-Wy-fAL">
+                                <rect key="frame" x="30" y="229" width="333" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6VS-32-ggf">
+                                <rect key="frame" x="30" y="303" width="333" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpq-ln-uBH">
+                                <rect key="frame" x="155.33333333333334" y="387" width="82.333333333333343" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="register"/>
+                                <connections>
+                                    <action selector="registerButtonAction:" destination="n6b-sF-xwe" eventType="touchUpInside" id="k2g-4U-5Ps"/>
+                                    <segue destination="BH3-Cv-VkV" kind="unwind" unwindAction="unwindActionWithUnwindSegue:" id="aeg-n0-JRg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1ca-IK-CGq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dpq-ln-uBH" firstAttribute="top" secondItem="6VS-32-ggf" secondAttribute="bottom" constant="50" id="3DQ-Mo-XxN"/>
+                            <constraint firstItem="1ca-IK-CGq" firstAttribute="trailing" secondItem="6VS-32-ggf" secondAttribute="trailing" constant="30" id="ION-ec-DNz"/>
+                            <constraint firstItem="1ca-IK-CGq" firstAttribute="trailing" secondItem="lKX-Wy-fAL" secondAttribute="trailing" constant="30" id="Quu-lR-eUg"/>
+                            <constraint firstItem="6VS-32-ggf" firstAttribute="leading" secondItem="1ca-IK-CGq" secondAttribute="leading" constant="30" id="WcO-to-VyB"/>
+                            <constraint firstItem="dpq-ln-uBH" firstAttribute="centerX" secondItem="cJg-Sj-KCS" secondAttribute="centerX" id="bFQ-QW-7lM"/>
+                            <constraint firstItem="lKX-Wy-fAL" firstAttribute="centerX" secondItem="cJg-Sj-KCS" secondAttribute="centerX" id="tyZ-Ys-h65"/>
+                            <constraint firstItem="lKX-Wy-fAL" firstAttribute="centerY" secondItem="cJg-Sj-KCS" secondAttribute="centerY" constant="-180" id="uE3-38-kug"/>
+                            <constraint firstItem="lKX-Wy-fAL" firstAttribute="leading" secondItem="1ca-IK-CGq" secondAttribute="leading" constant="30" id="v2l-zi-Jkz"/>
+                            <constraint firstItem="6VS-32-ggf" firstAttribute="top" secondItem="lKX-Wy-fAL" secondAttribute="bottom" constant="40" id="y6C-zo-dec"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="s8W-Nk-PtE"/>
+                    <connections>
+                        <outlet property="emailTextFieldRegister" destination="lKX-Wy-fAL" id="HVp-3g-A5N"/>
+                        <outlet property="passwordTextFieldRegister" destination="6VS-32-ggf" id="MBV-lN-3uM"/>
+                        <outlet property="registerButton" destination="dpq-ln-uBH" id="P7t-Ki-6Ih"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lS3-E8-b1R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="BH3-Cv-VkV" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="857.25190839694653" y="412.67605633802822"/>
+        </scene>
         <!--Second View Controller-->
         <scene sceneID="59q-kf-WFT">
             <objects>
@@ -220,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2T-QM-baL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="886" y="13"/>
+            <point key="canvasLocation" x="1036" y="-231"/>
         </scene>
     </scenes>
     <resources>

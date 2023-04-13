@@ -26,8 +26,8 @@ class ViewController: UIViewController {
     private var email: String = ""
     private var password: String = ""
     
-    private var mockEmail = "dan@gmail.com"
-    private var mockPassword = "12345"
+    var mockEmail = "dan@gmail.com"
+    var mockPassword = "Qw12345"
     
     // MARK: - Life Cylce
     override func viewDidLoad() {
@@ -59,7 +59,11 @@ class ViewController: UIViewController {
             present(alert, animated: true)
         }
     }
+    
     @IBAction func buttonSignupAction(_ sender: UIButton) {
+    }
+    
+    @IBAction func unwindAction(unwindSegue: UIStoryboardSegue) {
     }
     
     // MARK: - Methods
@@ -73,6 +77,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
+        offButtonLogin(turnOff: true)
         guard let text = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines), !text.isEmpty else { return }
         switch textField {
         case textFieldEmail:
@@ -81,8 +86,7 @@ extension ViewController: UITextFieldDelegate {
             if isValidEmail {
                 // TODO: save email
                 email = text
-                envelopImageView.tintColor = defaultColor
-                viewEmail.backgroundColor = defaultColor
+                makeDefaultField(textField: textField)
             } else {
                 makeErrorField(textField: textField)
             }
@@ -92,8 +96,7 @@ extension ViewController: UITextFieldDelegate {
             if isValidPassword {
                 // TODO: save password
                 password = text
-                lockImageView.tintColor = defaultColor
-                viewPassword.backgroundColor = defaultColor
+                makeDefaultField(textField: textField)
             } else {
                 makeErrorField(textField: textField)
             }
@@ -107,7 +110,22 @@ extension ViewController: UITextFieldDelegate {
     }
     
     private func checkPassword(password: String) -> Bool {
-        return password.count > 3
+        let regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/
+        return password.contains(regex)
+    }
+    
+    private func makeDefaultField(textField: UITextField) {
+        switch textField {
+        case textFieldEmail:
+            envelopImageView.tintColor = defaultColor
+            viewEmail.backgroundColor = defaultColor
+        case textFieldPassword:
+            lockImageView.tintColor = defaultColor
+            viewPassword.backgroundColor = defaultColor
+            offButtonLogin(turnOff: false)
+        default:
+            print("unknown textField")
+        }
     }
     
     private func makeErrorField(textField: UITextField) {
@@ -115,11 +133,23 @@ extension ViewController: UITextFieldDelegate {
         case textFieldEmail:
             envelopImageView.tintColor = errorColor
             viewEmail.backgroundColor = errorColor
+            offButtonLogin(turnOff: true)
         case textFieldPassword:
             lockImageView.tintColor = errorColor
             viewPassword.backgroundColor = errorColor
+            offButtonLogin(turnOff: true)
         default:
             print("unknown textField")
+        }
+    }
+    
+    private func offButtonLogin(turnOff: Bool) {
+        if turnOff {
+            buttonLogin.isUserInteractionEnabled = false
+            buttonLogin.backgroundColor = errorColor
+        } else {
+            buttonLogin.isUserInteractionEnabled = true
+            buttonLogin.backgroundColor = defaultColor
         }
     }
 }
