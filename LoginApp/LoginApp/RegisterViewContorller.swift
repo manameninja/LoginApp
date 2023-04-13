@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class RegisterViewController: UIViewController {
+final class RegisterScreen: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var emailTextFieldRegister: UITextField!
     @IBOutlet weak var passwordTextFieldRegister: UITextField!

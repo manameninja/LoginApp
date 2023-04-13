@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginScreen: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var buttonLogin: UIButton!
     @IBOutlet weak var buttonSignup: UIButton!
@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     // MARK: - Properties
     private let defaultColor = UIColor(named: "MyColor") ?? UIColor.darkGray
     private let errorColor = UIColor.systemRed
+    private let inactiveColor = UIColor.lightGray
     
     private var email: String = ""
     private var password: String = ""
@@ -35,6 +36,7 @@ class ViewController: UIViewController {
         textFieldEmail.delegate = self
         textFieldPassword.delegate = self
         addShadow()
+        offLoginButton()
     }
     
     // MARK: - IBActions
@@ -75,9 +77,9 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        offButtonLogin(turnOff: true)
+extension LoginScreen: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        offLoginButton()
         guard let text = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines), !text.isEmpty else { return }
         switch textField {
         case textFieldEmail:
@@ -89,6 +91,7 @@ extension ViewController: UITextFieldDelegate {
                 makeDefaultField(textField: textField)
             } else {
                 makeErrorField(textField: textField)
+                email = ""
             }
         case textFieldPassword:
             let isValidPassword = checkPassword(password: text)
@@ -99,9 +102,14 @@ extension ViewController: UITextFieldDelegate {
                 makeDefaultField(textField: textField)
             } else {
                 makeErrorField(textField: textField)
+                password = ""
             }
         default:
             print("unknown textField")
+        }
+        
+        if !email.isEmpty && !password.isEmpty {
+            onLoginButton()
         }
     }
     
@@ -122,7 +130,6 @@ extension ViewController: UITextFieldDelegate {
         case textFieldPassword:
             lockImageView.tintColor = defaultColor
             viewPassword.backgroundColor = defaultColor
-            offButtonLogin(turnOff: false)
         default:
             print("unknown textField")
         }
@@ -133,23 +140,21 @@ extension ViewController: UITextFieldDelegate {
         case textFieldEmail:
             envelopImageView.tintColor = errorColor
             viewEmail.backgroundColor = errorColor
-            offButtonLogin(turnOff: true)
         case textFieldPassword:
             lockImageView.tintColor = errorColor
             viewPassword.backgroundColor = errorColor
-            offButtonLogin(turnOff: true)
         default:
             print("unknown textField")
         }
     }
     
-    private func offButtonLogin(turnOff: Bool) {
-        if turnOff {
-            buttonLogin.isUserInteractionEnabled = false
-            buttonLogin.backgroundColor = errorColor
-        } else {
-            buttonLogin.isUserInteractionEnabled = true
-            buttonLogin.backgroundColor = defaultColor
-        }
+    private func offLoginButton() {
+        buttonLogin.isUserInteractionEnabled = false
+        buttonLogin.backgroundColor = inactiveColor
+    }
+    
+    private func onLoginButton() {
+        buttonLogin.isUserInteractionEnabled = true
+        buttonLogin.backgroundColor = defaultColor
     }
 }

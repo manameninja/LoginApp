@@ -24,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="-779" y="4"/>
         </scene>
-        <!--View Controller-->
+        <!--Login Screen-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginScreen" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -207,10 +207,10 @@
             </objects>
             <point key="canvasLocation" x="116.79389312977099" y="3.5211267605633805"/>
         </scene>
-        <!--Register View Controller-->
+        <!--Register Screen-->
         <scene sceneID="reF-yE-nfz">
             <objects>
-                <viewController id="n6b-sF-xwe" customClass="RegisterViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="n6b-sF-xwe" customClass="RegisterScreen" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cJg-Sj-KCS">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -240,7 +240,7 @@
                         <constraints>
                             <constraint firstItem="dpq-ln-uBH" firstAttribute="top" secondItem="6VS-32-ggf" secondAttribute="bottom" constant="50" id="3DQ-Mo-XxN"/>
                             <constraint firstItem="1ca-IK-CGq" firstAttribute="trailing" secondItem="6VS-32-ggf" secondAttribute="trailing" constant="30" id="ION-ec-DNz"/>
-                            <constraint firstItem="1ca-IK-CGq" firstAttribute="trailing" secondItem="lKX-Wy-fAL" secondAttribute="trailing" constant="30" id="Quu-lR-eUg"/>
+                            <constraint firstItem="1ca-IK-CGq" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lKX-Wy-fAL" secondAttribute="trailing" id="Quu-lR-eUg"/>
                             <constraint firstItem="6VS-32-ggf" firstAttribute="leading" secondItem="1ca-IK-CGq" secondAttribute="leading" constant="30" id="WcO-to-VyB"/>
                             <constraint firstItem="dpq-ln-uBH" firstAttribute="centerX" secondItem="cJg-Sj-KCS" secondAttribute="centerX" id="bFQ-QW-7lM"/>
                             <constraint firstItem="lKX-Wy-fAL" firstAttribute="centerX" secondItem="cJg-Sj-KCS" secondAttribute="centerX" id="tyZ-Ys-h65"/>
@@ -261,10 +261,10 @@
             </objects>
             <point key="canvasLocation" x="857.25190839694653" y="412.67605633802822"/>
         </scene>
-        <!--Second View Controller-->
+        <!--Home Screen-->
         <scene sceneID="59q-kf-WFT">
             <objects>
-                <viewController id="2sx-yy-GfH" customClass="SecondViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2sx-yy-GfH" customClass="HomeScreen" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wCL-rX-th0">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
