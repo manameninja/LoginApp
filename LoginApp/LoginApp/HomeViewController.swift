@@ -7,6 +7,6 @@
 
 import UIKit
 
-final class HomeScreen: UIViewController {
+final class HomeViewController: UIViewController {
 
 }

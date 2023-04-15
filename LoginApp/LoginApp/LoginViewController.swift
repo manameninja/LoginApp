@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginScreen: UIViewController {
+class LoginViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var buttonLogin: UIButton!
     @IBOutlet weak var buttonSignup: UIButton!
@@ -30,7 +30,7 @@ class LoginScreen: UIViewController {
     var mockEmail = "dan@gmail.com"
     var mockPassword = "Qw12345"
     
-    // MARK: - Life Cylce
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         textFieldEmail.delegate = self
@@ -75,9 +75,14 @@ class LoginScreen: UIViewController {
         buttonLogin.layer.shadowOpacity = 0.8
         buttonLogin.layer.shadowRadius = 3
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)
+    }
+    
 }
 
-extension LoginScreen: UITextFieldDelegate {
+extension LoginViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         offLoginButton()
         guard let text = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines), !text.isEmpty else { return }
